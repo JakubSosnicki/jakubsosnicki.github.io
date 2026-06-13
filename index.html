@@ -46,23 +46,32 @@
   <label>Email kontaktowy:</label>
   <input type="email" name="email" required>
 
-  <label>Numer telefonu:</label>
-  <input type="tel" name="telefon">
+  <!-- DATY -->
+  <label>Data rozpoczęcia poszukiwań:</label>
+  <input type="date" id="start" name="data_start" required>
 
-  <label>Data poszukiwań:</label>
-  <input type="date" name="data" required>
+  <label>Data zakończenia poszukiwań:</label>
+  <input type="date" id="end" name="data_end" required>
 
+  <!-- CEL -->
   <label>Cel poszukiwań:</label>
-  <select name="cel" required>
+  <select id="cel" name="cel" required onchange="toggleInneCel()">
     <option value="">-- wybierz --</option>
-    <option value="rekonesans">Rekonesans</option>
-    <option value="zabytki">Zabytki</option>
-    <option value="edukacja">Edukacyjne</option>
+    <option value="militaria">Poszukiwanie militariów I/II wś</option>
+    <option value="drobne_przedmioty">Poszukiwanie drobnych przedmiotów (guziki, monety)</option>
+    <option value="inne">Inne</option>
   </select>
 
-  <label>Opis lokalizacji (np. działki, teren):</label>
-  <textarea name="lokalizacja" required></textarea>
+  <input type="text" id="cel_inne" name="cel_inne"
+         placeholder="Wpisz cel poszukiwań"
+         style="display:none; margin-top:10px;">
 
+  <!-- LOKALIZACJA -->
+  <label>Lokalizacja (woj / powiat / gmina / nr działki):</label>
+  <textarea name="lokalizacja" rows="4" required
+    placeholder="np. podkarpackie / rzeszowski / Głogów Małopolski / działka 123/4"></textarea>
+
+  <!-- INFO -->
   <label>Informacje dodatkowe (max 200 znaków):</label>
   <textarea name="info" maxlength="200"></textarea>
 
