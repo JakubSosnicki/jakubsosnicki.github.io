@@ -37,22 +37,36 @@
 
 <form action="https://formsubmit.co/pasjaposzukiwan@gmail.com" method="POST">
 
-  <input type="hidden" name="_subject" value="Nowe zgłoszenie">
+  <input type="hidden" name="_subject" value="Nowe zgłoszenie - poszukiwania">
   <input type="hidden" name="_captcha" value="false">
 
-  <label>Data:</label>
+  <label>Imię i nazwisko:</label>
+  <input type="text" name="imie_nazwisko" required>
+
+  <label>Email kontaktowy:</label>
+  <input type="email" name="email" required>
+
+  <label>Numer telefonu:</label>
+  <input type="tel" name="telefon">
+
+  <label>Data poszukiwań:</label>
   <input type="date" name="data" required>
 
-  <label>Cel:</label>
-  <select name="cel">
-    <option>Rekonesans</option>
-    <option>Zabytki</option>
+  <label>Cel poszukiwań:</label>
+  <select name="cel" required>
+    <option value="">-- wybierz --</option>
+    <option value="rekonesans">Rekonesans</option>
+    <option value="zabytki">Zabytki</option>
+    <option value="edukacja">Edukacyjne</option>
   </select>
 
-  <label>Info:</label>
+  <label>Opis lokalizacji (np. działki, teren):</label>
+  <textarea name="lokalizacja" required></textarea>
+
+  <label>Informacje dodatkowe (max 200 znaków):</label>
   <textarea name="info" maxlength="200"></textarea>
 
-  <button type="submit">Wyślij</button>
+  <button type="submit">Wyślij zgłoszenie</button>
 </form>
 
 <footer>
