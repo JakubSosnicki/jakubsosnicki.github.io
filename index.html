@@ -67,37 +67,43 @@
          style="display:none; margin-top:10px;">
 
   <!-- LOKALIZACJA -->
+   <label>Działki objęte wnioskiem:</label>
 
-  <label>Działki objęte wnioskiem:</label>
+   <small>Przykład: 181613_2.0001.123/4</small>
+  <p class="help-text">
+    Identyfikator działki znajdziesz w Geoportalu po kliknięciu działki
+    w warstwie Ewidencja Gruntów i Budynków.
+  </p>
 
 <div id="dzialki-container">
   <div class="dzialka">
-    <input type="text" name="dzialka[]" placeholder="np. 123/4" required>
-    <button type="button" onclick="usunDzialke(this)">Usuń</button>
+    <input
+      type="text"
+      name="dzialka[]"
+      placeholder="181613_2.0001.123/4"
+      required>
+
+    <button type="button" onclick="usunDzialke(this)">
+      Usuń
+    </button>
   </div>
 </div>
 
-<button type="button" onclick="dodajDzialke()">+ Dodaj działkę</button>
-    <label>Województwo:</label>
-  <select id="woj" name="wojewodztwo" required>
-  <option value="">-- wybierz --</option>
-  <option value="podkarpackie">Podkarpackie</option>
-  <option value="malopolskie">Małopolskie</option>
-  <option value="mazowieckie">Mazowieckie</option>
-  </select>
+<button type="button" onclick="dodajDzialke()">
+  + Dodaj kolejną działkę
+</button>
 
-    <label>Powiat:</label>
-  <select id="powiat" name="powiat" required>
-  <option value="">-- wybierz --</option>
-  </select>
+<p class="help-text">
+  Wprowadź pełny identyfikator działki z Geoportalu.
+</p>
 
-    <label>Gmina:</label>
-  <select id="gmina" name="gmina" required>
-  <option value="">-- wybierz --</option>
-  </select>
-
-    <label>Numer działki ewidencyjnej:</label>
-  <input type="text" name="dzialka" placeholder="np. 123/4" required>
+<p>
+    Nie znasz identyfikatora działki?
+    Sprawdź w Geoportalu:
+    <a href="https://mapy.geoportal.gov.pl" target="_blank">
+      mapy.geoportal.gov.pl
+    </a>
+  </p>
 
   <button type="submit">Wyślij zgłoszenie</button>
 </form>
