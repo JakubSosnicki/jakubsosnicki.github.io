@@ -67,6 +67,17 @@
          style="display:none; margin-top:10px;">
 
   <!-- LOKALIZACJA -->
+
+  <label>Działki objęte wnioskiem:</label>
+
+<div id="dzialki-container">
+  <div class="dzialka">
+    <input type="text" name="dzialka[]" placeholder="np. 123/4" required>
+    <button type="button" onclick="usunDzialke(this)">Usuń</button>
+  </div>
+</div>
+
+<button type="button" onclick="dodajDzialke()">+ Dodaj działkę</button>
     <label>Województwo:</label>
   <select id="woj" name="wojewodztwo" required>
   <option value="">-- wybierz --</option>

@@ -28,4 +28,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // globalne funkcje
+  window.dodajDzialke = function () {
+    const container = document.getElementById("dzialki-container");
+
+    const div = document.createElement("div");
+    div.classList.add("dzialka");
+
+    div.innerHTML = `
+      <input type="text" name="dzialka[]" placeholder="np. 123/4" required>
+      <button type="button" onclick="usunDzialke(this)">Usuń</button>
+    `;
+
+    container.appendChild(div);
+  };
+
+  window.usunDzialke = function (btn) {
+    btn.parentElement.remove();
+  };
+
 });
