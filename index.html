@@ -28,7 +28,7 @@
 <section>
   <h2>Jak to działa?</h2>
   <ol>
-    <li>Wysyłasz numery działek, czas trwania poszukiwań oraz cel poszukiwań</li>
+    <li>Wysyłasz lokalizację działek, czas trwania poszukiwań oraz cel poszukiwań</li>
     <li>Przygotowuję dokumenty</li>
     <li>Otrzymujesz dokumenty wraz z instrukcją</li>
     <li>Składasz wniosek</li>
@@ -39,15 +39,36 @@
   <h2>Kontakt</h2>
   <p>Email: pasjaposzukiwan@gmail.pl</p>
 
-  <form>
-    <input type="text" placeholder="Imię" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Numery działek"></textarea>
-    <textarea placeholder="Czas trwania"></textarea>
-    <textarea placeholder="Cel poszukiwań"></textarea>
-    <textarea placeholder="Dodatkowe informacje"></textarea>
-    <button type="submit">Wyślij</button>
-  </form>
+  <form action="submit.php" method="post">
+
+  <!-- DATA -->
+  <label for="data">Data poszukiwań:</label>
+  <input type="date" id="data" name="data" required>
+
+  <br><br>
+
+  <!-- CEL POSZUKIWAŃ -->
+  <label for="cel">Cel poszukiwań:</label>
+  <select id="cel" name="cel" required>
+    <option value="">-- wybierz cel --</option>
+    <option value="rekonesans">Rekonesans terenu</option>
+    <option value="poszukiwanie_zabytkow">Poszukiwanie zabytków</option>
+    <option value="edukacyjne">Edukacyjne / historyczne</option>
+    <option value="inne">Inne</option>
+  </select>
+
+  <br><br>
+
+  <!-- INFORMACJE DODATKOWE -->
+  <label for="info">Informacje dodatkowe (max 200 znaków):</label><br>
+  <textarea id="info" name="info" maxlength="200" rows="4" cols="40"
+    placeholder="Opcjonalne informacje..."></textarea>
+
+  <br><br>
+
+  <button type="submit">Wyślij wniosek</button>
+
+</form>
 </section>
 
 <footer>
