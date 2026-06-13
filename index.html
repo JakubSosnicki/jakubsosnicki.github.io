@@ -35,77 +35,58 @@
   </ol>
 </section>
 
-<form action="https://formsubmit.co/pasjaposzukiwan@gmail.com" method="POST">
+<form action="https://formsubmit.co/twoj@email.pl" method="POST">
 
-  <input type="hidden" name="_subject" value="Nowe zgłoszenie - poszukiwania">
-  <input type="hidden" name="_captcha" value="false">
+  <h2>Zamów usługę</h2>
 
-  <label>Imię i nazwisko:</label>
-  <input type="text" name="imie_nazwisko" required>
+  <label for="imie">Imię i nazwisko</label>
+  <input
+    type="text"
+    id="imie"
+    name="imie_nazwisko"
+    required>
 
-  <label>Email kontaktowy:</label>
-  <input type="email" name="email" required>
+  <label for="email">Adres e-mail</label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    required>
 
-  <!-- DATY -->
-  <label>Data rozpoczęcia poszukiwań:</label>
-  <input type="date" id="start" name="data_start" required>
+  <label for="telefon">Numer telefonu (opcjonalnie)</label>
+  <input
+    type="tel"
+    id="telefon"
+    name="telefon">
 
-  <label>Data zakończenia poszukiwań:</label>
-  <input type="date" id="end" name="data_end" required>
+  <label for="usluga">Wybierz usługę</label>
+  <select
+    id="usluga"
+    name="usluga"
+    required>
 
-  <!-- CEL -->
-  <label>Cel poszukiwań:</label>
-  <select id="cel" name="cel" required onchange="toggleInneCel()">
-    <option value="">-- wybierz --</option>
-    <option value="militaria">Poszukiwanie militariów I/II wś</option>
-    <option value="drobne_przedmioty">Poszukiwanie drobnych przedmiotów (guziki, monety)</option>
-    <option value="inne">Inne</option>
+    <option value="">-- wybierz usługę --</option>
+    <option value="Mapa obszaru BDOT10k">Mapa obszaru BDOT10k</option>
+    <option value="Program poszukiwań">Program poszukiwań</option>
+    <option value="Wniosek do WKZ">Wniosek do WKZ</option>
+    <option value="Wniosek do LP">Wniosek do LP</option>
+    <option value="Konsultacje">Konsultacje</option>
+
   </select>
 
-  <input type="text" id="cel_inne" name="cel_inne"
-         placeholder="Wpisz cel poszukiwań"
-         style="display:none; margin-top:10px;">
+  <label for="wiadomosc">
+    Dodatkowe informacje (opcjonalnie)
+  </label>
+  <textarea
+    id="wiadomosc"
+    name="wiadomosc"
+    rows="4"
+    maxlength="300"></textarea>
 
-  <!-- LOKALIZACJA -->
-   <label>Działki objęte wnioskiem:</label>
+  <button type="submit">
+    Wyślij zgłoszenie
+  </button>
 
-   <small>Przykład: 181613_2.0001.123/4</small>
-  <p class="help-text">
-    Identyfikator działki znajdziesz w Geoportalu po kliknięciu działki
-    w warstwie Ewidencja Gruntów i Budynków.
-  </p>
-
-<div id="dzialki-container">
-  <div class="dzialka">
-    <input
-      type="text"
-      name="dzialka[]"
-      placeholder="181613_2.0001.123/4"
-      required>
-
-    <button type="button" onclick="usunDzialke(this)">
-      Usuń
-    </button>
-  </div>
-</div>
-
-<button type="button" onclick="dodajDzialke()">
-  + Dodaj kolejną działkę
-</button>
-
-<p class="help-text">
-  Wprowadź pełny identyfikator działki z Geoportalu.
-</p>
-
-<p>
-    Nie znasz identyfikatora działki?
-    Sprawdź w Geoportalu:
-    <a href="https://mapy.geoportal.gov.pl" target="_blank">
-      mapy.geoportal.gov.pl
-    </a>
-  </p>
-
-  <button type="submit">Wyślij zgłoszenie</button>
 </form>
 
 <footer>
